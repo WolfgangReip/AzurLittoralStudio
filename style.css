@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+  border: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+  list-style: none;
+}
+
+menu,
+ol,
+ul {
+  padding-left: 0;
+}
+
+/*Tip: Add the role="list" attribute-value to all lists that you’d like screen readers to announce as such, because list-style: none; disables this ability in some web browsers.*/
+article ol,
+article ul {
+  list-style-position: inside;
+}
+
+a {
+  /* Places underlines below the descenders */
+  text-underline-position: under;
+  /* Sets the thickness as a percentage of the font size */
+  text-decoration-thickness: 8;
+}
+
+/* <html> = the root */
+html {
+  font-size: 62.5%; /* (62.5/100) * 16px = 10px */
+  -webkit-text-size-adjust: none; /* for iOS Safari */
+  text-size-adjust: none; /* for other mobile browsers */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+label,
+button,
+select,
+summary,
+[type='radio'],
+[type='submit'],
+[type='checkbox'] {
+  cursor: pointer;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+:root {
+  --body-font: 'Roboto', sans-serif;
+  --heading-font: 'Montserrat', sans-serif;
+  --cyan: #02d2d2;
+  --dark-cyan: #196f86;
+  --darker-cyan: #01617a;
+  --lighter-cyan: #2587ac;
+  --blue-grey: #e4eff1;
+  --light-blue: #b6e1e8;
+  --matt-blue: #70a1af;
+}
+
+.montserrat-bold {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: var(--body-font);
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: rgb(250, 251, 251);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+main {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  width: 100px;
+  border-radius: 100px;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.61) 35%,
+    #25758b54 100%
+  );
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  margin: 0 16px;
+  /* letter-spacing: 1.5px; */
+  transition: color 0.25s ease;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #02d2d2;
+}
+
+.primary-button.navbar-button {
+  /* background-color: #02d2d2; */
+  background: hsla(180, 98%, 42%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(180, 98%, 42%, 1) 0%,
+    hsla(193, 45%, 46%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(180, 98%, 42%, 1) 0%,
+    hsla(193, 45%, 46%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(180, 98%, 42%, 1) 0%,
+    hsla(193, 45%, 46%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#02D2D2", endColorstr="#4194AB", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#02D2D2", endColorstr="#5DB8D1", GradientType=1 );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#02D2D2", endColorstr="#196F86", GradientType=1 );
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font: var(--body-font);
+  font-size: 1.9em;
+  margin-left: 30px;
+  font-weight: bold;
+  transition: filter 0.25s ease;
+}
+
+.primary-button.navbar-button:hover {
+  filter: brightness(0.85);
+}
+
+.primary-button.title-button {
+  background-color: transparent;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: 2px solid #02d2d2;
+  font: var(--body-font);
+  font-size: 1.9em;
+  margin-top: 25px;
+  font-weight: bold;
+  transition: background-color 0.25s ease;
+}
+
+.primary-button.title-button:hover {
+  background-color: #02d2d2;
+}
+
+.title-main {
+  font-size: 7.5rem;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  width: 30%;
+  margin: 0 0 1.5rem 0;
+  line-height: 7rem;
+}
+
+.title-description {
+  font-size: 2.7rem;
+  font-weight: 400;
+  margin: 0.5rem;
+  font-family: var(--body-font);
+}
+
+.title-description span {
+  font-weight: 700;
+  font-size: 2.9rem;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-content {
+  position: relative;
+  margin-top: 8%;
+  width: 1200px;
+  color: white;
+  z-index: 1;
+  /* border: red 1px solid; */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #0c1a3b 0%, #0c1a3b15 100%);
+  z-index: -1;
+}
+
+.abilities {
+  height: 300px;
+  width: 100%;
+  align-items: center;
+}
