@@ -96,6 +96,7 @@ a {
 body,
 html {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -105,16 +106,33 @@ body {
   background-color: #f0f0f0;
   font-family: var(--body-font);
   width: 100%;
+  height: 100%;
   flex-wrap: wrap;
   background-color: rgb(250, 251, 251);
   display: flex;
   justify-content: center;
   align-content: center;
-  height: 100vh;
+}
+
+body.fullscreen-active::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 998; /* Assure que c'est en dessous de la vidéo */
+  pointer-events: none;
 }
 
 main {
   width: 100%;
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 }
 
 .navbar {
@@ -184,8 +202,8 @@ main {
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#02D2D2", endColorstr="#4194AB", GradientType=1 );
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#02D2D2", endColorstr="#5DB8D1", GradientType=1 );
-
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#02D2D2", endColorstr="#196F86", GradientType=1 );
+
   color: white;
   padding: 15px 20px;
   border-radius: 50px;
@@ -241,11 +259,13 @@ main {
 .hero {
   position: relative;
   height: 100vh;
+  border: 1px solid red;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 2;
 }
 
 .hero-video {
@@ -264,7 +284,7 @@ main {
   width: 1200px;
   color: white;
   z-index: 1;
-  /* border: red 1px solid; */
+  border: red 1px solid;
 }
 
 .hero::before {
@@ -279,7 +299,155 @@ main {
 }
 
 .abilities {
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  background-color: var(--blue-grey);
+  height:fit-content;
   width: 100%;
   align-items: center;
+  margin-top: 0;  /* Adjust this value as needed to prevent overlap */
 }
+
+.abilities-title {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  color: var(--darker-cyan);
+  margin-bottom: 1.5rem;
+}
+
+.abilities-presentation  {
+  font-size: 2rem;
+  font-weight: 400;
+  max-width: 65%;
+  color: var(--matt-blue);
+  text-align: center;
+  font-family: var(--body-font);
+  margin-bottom: 1.5rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin-top: 7rem;
+  gap:0.5rem;
+}
+
+.gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-container {
+  height: 100%;
+  display: flex;
+  margin-top: 5rem;
+  flex-direction: column;
+  border: 1px solid blue;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.card{
+  position: relative;
+  z-index: 1;
+}
+
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s, visibility 0.3s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-text {
+  color: white;
+  font-size: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 5;
+  display: none; /* Masqué par défaut */
+}
+
+.card.fullscreen {
+  position: fixed;
+  left: 5%;
+  right: 5%;
+  margin: 0 auto;
+  top: calc(140px + 2.5%); /* Ajoute un espace en haut équivalent à la hauteur de la navbar + un peu de marge */
+  bottom: 2.5%; /* Marge en bas pour équilibrer */
+  width: 70%; /* Ajustement automatique de la largeur */
+  height: 70%; /* Ajustement automatique de la hauteur */
+  max-height: calc(100% - 145px); /* 100% de la hauteur de l'écran moins la hauteur de la navbar et un peu de marge */
+  z-index: 4;
+  border: none;
+}
+
+.card-video.fullscreen {
+  width: 100%; /* Ajustement de la largeur à 100% du conteneur .card */
+  max-height: 100%; /* Hauteur maximale à 100% de .card */
+  object-fit: contain; /* Garantit que tout le contenu vidéo est visible sans être coupé */
+  z-index: 999;
+}
+
+.card.fullscreen .card-overlay {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card.fullscreen .close-btn {
+  display: block;
+}
+
+.gallery::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0); /* Initially transparent */
+  transition: background-color 0.3s ease;
+  pointer-events: none; /* Initially prevents interaction */
+  z-index: -1; /* Make sure this does not overlap content by default */
+}
+
+.fullscreen-active .gallery{
+  background: rgba(0, 0, 0, 0.8); /* Assombrissement fort */
+  z-index: 1000; /* Très élevé pour couvrir tout */
+  pointer-events: auto; /* Permet de cliquer pour fermer */
+}
+
+body.no-scroll {
+  overflow: hidden; 
+}
+
+
+
