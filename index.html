@@ -1,156 +1,812 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Balises Open Graph -->
+    <meta property="og:title" content="Azur Littoral Studio">
+    <meta property="og:description"
+      content="Création et animation 3D et 2D. Post-Production.Particulier ou entreprise. Ensemble, pour votre succès.">
+    <meta property="og:image"
+      content="https://www.monsite.com/path/to/image.jpg">
+    <meta property="og:url" content="https://www.azurlittoralstudio.com">
+    <meta property="og:type" content="website">
+
+    <!-- Balises Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Azur Littoral Studio">
+    <meta name="twitter:description"
+      content="Création et animation 3D et 2D. Post-Production.Particulier ou entreprise. Ensemble, pour votre succès.">
+    <meta name="twitter:url" content="https://www.azurlittoralstudio.com">
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap"
+      rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./assets/Logo_32x32.PNG" />
     <title>Azur Littoral Studio</title>
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="logo-container">
-        <img
-          class="logo"
-          src="assets/Logo_transparent.png"
-          alt="Azur Littoral Studio"
-        />
+      <div class="navbar-inner">
+        <div class="logo-container">
+          <a href="#hero">
+            <img class="logo" src="assets/logo/logo.png"
+              alt="Azur Littoral Studio" />
+          </a>
+        </div>
+        <ul class="menu">
+          <li><a href="#services"
+              data-translate="menu_services">Services</a></li>
+          <li><a href="#réalisations"
+              data-translate="menu_realisations">Réalisations</a></li>
+          <li><a href="#faq" data-translate="menu_faq">FAQ</a></li>
+        </ul>
+        <div class="contact-language-container">
+          <div class="language-container">
+            <button class="language-button FR" data-lang="fr">FR</button>
+            <span class="separator">|</span>
+            <button class="language-button EN" data-lang="en">EN</button>
+          </div>
+          <a href="#contact" class="primary-button navbar-button"
+            data-translate="contact_us">Contactez-nous</a>
+        </div>
+        <!-- Burger Menu Button -->
+        <div class="button_container" id="toggle">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </div>
       </div>
-      <ul class="menu">
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Solutions</a></li>
-        <li><a href="#">Developers</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Pricing</a></li>
-        <button class="primary-button navbar-button">Contactez-nous</button>
-      </ul>
     </nav>
+    <!-- Overlay Menu -->
+    <div class="overlay" id="overlay">
+      <nav class="overlay-menu">
+        <ul>
+          <li><a href="#services"
+              data-translate="menu_services">Services</a></li>
+          <li><a href="#réalisations"
+              data-translate="menu_realisations">Réalisations</a></li>
+          <li><a href="#faq" data-translate="menu_faq">FAQ</a></li>
+          <li><a href="#contact"
+              data-translate="menu_contact">Contactez-nous</a></li>
+        </ul>
+      </nav>
+    </div>
     <main>
-      <section class="hero">
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
         <video class="hero-video" autoplay muted loop>
-          <source src="./assets/Hero_section_MP4.mp4" type="video/mp4" />
+          <source src="./assets/videos/hero_section.mp4" type="video/mp4" />
         </video>
         <div class="hero-content">
-          <h1 class="title-main">Création Innovation Émotion</h1>
-          <p class="title-description">
-            Création et animation 3D et 2D. Post-Production.
-          </p>
-
-          <p class="title-description">
-            Particulier ou entreprise.
-            <span> Ensemble, pour votre succès.</span>
-          </p>
-          <button class="primary-button title-button">Contactez-nous</button>
+          <h1 class="title-main">
+            <span
+              class="animate__animated animate__fadeInLeft animate__delay-1s crea"
+              data-translate="hero_creation">CREATION</span>
+            <span
+              class="animate__animated animate__fadeInLeft animate__delay-2s inno"
+              data-translate="hero_innovation">INNOVATION</span>
+            <span
+              class="animate__animated animate__fadeInLeft animate__delay-3s emotion"
+              data-translate="hero_emotion">EMOTION</span>
+          </h1>
+          <p
+            class="animate__animated animate__fadeIn animate__delay-3s title-description"
+            data-translate="hero_description_1">Création et animation 3D et 2D.
+            Post-Production.</p>
+          <p
+            class="animate__animated animate__fadeIn animate__delay-3s title-description"
+            data-translate="hero_description_2">Particulier ou enteprise. <span
+              data-translate="hero_together">Ensemble, pour votre
+              succès.</span></p>
+          <a href="#contact"
+            class="animate__animated animate__fadeIn animate__delay-3s primary-button title-button"
+            data-translate="contact_us">Contactez-nous</a>
         </div>
       </section>
-      <section class="abilities">
-        <div class="card-container">
-        <h2 class="abilities-title">Réalisations</h2>
-        <p class="abilities-presentation">Nous aidons les créateurs et les professionnels du secteur à concevoir et produire des solutions créatives de haute
-        qualité en 3D et en animation 2D/3D. Nous vous accompagnons pour transformer vos idées en produits réussis, que ce soit
-        par le biais de la modélisation 3D, de l'animation, du montage vidéo ou de la post-production. Notre expertise et nos
-        services sur mesure sont conçus pour développer et élargir les capacités de votre entreprise.</p>
-        <div class="gallery">
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/3D exterior visualisation_OK.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
+      <!-- Services Sections -->
+      <section id="services" class="section services">
+        <div class="title-container services" data-aos="zoom-in"
+          data-aos-easing="ease-in-sine" data-aos-duration="600"
+          data-aos-anchor-placement="bottom-bottom">
+          <h2 class="styled-title services services-desktop">
+            <span class="outline-text services"
+              data-translate="services_nos">NOS</span>
+            <span class="filled-text services"
+              data-translate="services_services">SERVICES</span>
+          </h2>
+          <h2 class="styled-title services services-responsive">
+            <span class="outline-text"></span>
+            <span class="filled-text"
+              data-translate="services_services">SERVICES</span>
+          </h2>
+        </div>
+        <div class="services-container">
+          <div class="services-video">
+            <div data-aos="fade-up" data-aos-duration="1300"
+              class="video-title services-title"
+              data-translate="services_video_title">Montage <span class="video"
+                data-translate="services_video">vidéo</span></div>
+            <ul class="services-list">
+              <li class="service" data-aos="fade-up" data-aos-duration="1300">
+                <div class="service-title-container">
+                  <img src="./assets/icons/commerce.png"
+                    class="service-icon"
+                    alt="Vidéos Commerciales Icon">
+                  <h3 class="service-title"
+                    data-translate="services_commercial_videos_title">Vidéos
+                    Commerciales</h3>
+                </div>
+                <div class="service-description">
+                  <p data-translate="services_commercial_videos_description">
+                    Promotions, produits commerciaux, marques, mettez en avant
+                    vos vidéos, photos de vos produits dans un montage vidéo
+                    dynamique et animé. Boostez votre visibilité et vos ventes
+                    afin d’atteindre une clientèle dans toute la France via les
+                    réseaux sociaux et internet.
+                  </p>
+                </div>
+              </li>
+              <li class="service" data-aos="fade-up" data-aos-duration="1300">
+                <div class="service-title-container">
+                  <img src="./assets/icons/entreprise.png" class="service-icon"
+                    alt="Vidéos d'entreprise Icon">
+                  <h3 class="service-title"
+                    data-translate="services_corporate_videos_title">Vidéos
+                    d'entreprise</h3>
+                </div>
+                <div class="service-description">
+                  <p data-translate="services_corporate_videos_description">
+                    Présentez votre activité professionnelle ou d’entreprise
+                    pour vous faire remarquer et gagner en pertinence dans votre
+                    zone de travail. Profitez d’une vidéo incluant vos prises de
+                    vues, logos, banderoles, voice-over et autres éléments pour
+                    promouvoir votre société.
+                  </p>
+                </div>
+              </li>
+              <li class="service" data-aos="fade-up" data-aos-duration="1300">
+                <div class="service-title-container">
+                  <img src="./assets/icons/marriage.png" class="service-icon"
+                    alt="Vidéos de Mariage Icon">
+                  <h3 class="service-title"
+                    data-translate="services_wedding_videos_title">Vidéos de
+                    Mariage</h3>
+                </div>
+                <div class="service-description">
+                  <p data-translate="services_wedding_videos_description">
+                    Capturez le meilleur jour de votre vie avec un contenu
+                    immersif. Sauvegardez et rendez inoubliables vos souvenirs à
+                    partager en famille. Une vidéo professionnelle pour
+                    immortaliser chaque instant précieux de votre mariage.
+                  </p>
+                </div>
+              </li>
+              <li class="service" data-aos="fade-up" data-aos-duration="1300">
+                <div class="service-title-container">
+                  <img src="./assets/icons/musique.png" class="service-icon"
+                    alt="Clips Musicaux Icon">
+                  <h3 class="service-title"
+                    data-translate="services_music_videos_title">Clips
+                    Musicaux</h3>
+                </div>
+                <div class="service-description">
+                  <p data-translate="services_music_videos_description">
+                    Brillez sur YouTube comme sur scène ! Transformez votre
+                    talent en une œuvre artistique audiovisuelle complète avec
+                    montage vidéo, animations, effets visuels, et
+                    post-production. Chaque artiste mérite une vidéo unique et
+                    professionnelle.
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/./3D Vape_OK.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
+          <div class="services-3d">
+            <div class="3d-title services-title" data-aos="fade-up"
+              data-aos-duration="1300"
+              data-translate="services_3d_title">Création <span
+                class="three-d">3D</span></div>
+            <ul class="services-list">
+              <li class="service" data-aos="fade-up" data-aos-duration="1300">
+                <div class="service-title-container">
+                  <img src="./assets/icons/interieur.png" class="service-icon"
+                    alt="Design Interieur 3D Icon">
+                  <h3 class="service-title"
+                    data-translate="services_interior_3d_title">Design Interieur
+                    3D</h3>
+                </div>
+                <div class="service-description">
+                  <p data-translate="services_interior_3d_description">
+                    Design intérieur, modélisation 3D, visualisation de projets
+                    architecturaux. Apportez vos idées à la vie avec des rendus
+                    réalistes et détaillés. Transformez vos espaces avec une
+                    perspective professionnelle en 3D.
+                  </p>
+                </div>
+              </li>
+              <li class="service" data-aos="fade-up" data-aos-duration="1300">
+                <div class="service-title-container">
+                  <img src="./assets/icons/exterior.png" class="service-icon"
+                    alt="Design Exterieur 3D Icon">
+                  <h3 class="service-title"
+                    data-translate="services_exterior_3d_title">Design Exterieur
+                    3D</h3>
+                </div>
+                <div class="service-description">
+                  <p data-translate="services_exterior_3d_description">
+                    Design extérieur, modélisation 3D, visualisation de projets
+                    architecturaux. Apportez vos idées à la vie avec des rendus
+                    réalistes et détaillés. Optimisez vos projets extérieurs
+                    avec une présentation 3D immersive.
+                  </p>
+                </div>
+              </li>
+              <li class="service" data-aos="fade-up" data-aos-duration="1300">
+                <div class="service-title-container">
+                  <img src="./assets/icons/animation_3d.png"
+                    class="service-icon"
+                    alt="Animation 3D Icon">
+                  <h3 class="service-title"
+                    data-translate="services_3d_animation_title">Animation
+                    3D</h3>
+                </div>
+                <div class="service-description">
+                  <p data-translate="services_3d_animation_description">
+                    Animation 3D, création de vidéos animées pour divers
+                    besoins, y compris des publicités, des démonstrations de
+                    produits et plus encore. Donnez vie à vos idées avec des
+                    animations captivantes et professionnelles.
+                  </p>
+                </div>
+              </li>
+              <li class="service" data-aos="fade-up" data-aos-duration="1300">
+                <div class="service-title-container">
+                  <img src="./assets/icons/tracking.png" class="service-icon"
+                    alt="Tracking 3D Icon">
+                  <h3 class="service-title"
+                    data-translate="services_cgi_environment_title">CGI
+                    Environnement</h3>
+                </div>
+                <div class="service-description">
+                  <p data-translate="services_cgi_environment_description">
+                    Création d'un environnement en 3D, incrustation de personnes
+                    sur fond vert, motion tracking pour des courts-métrage,
+                    vidéos de musique ou show télévisé.
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/Ad social medias_OK.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
-          </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/AVC_OK.mp4"video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
-          </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/Corporate_OK.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
-          </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/Interior 3D_OK.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
-          </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/Music video_OK.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
-          </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/Party_OK.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
-          </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        <div class="card" onclick="openFullscreen(this)">
-          <video class="card-video"autoplayted loop>
-            <source src="./assets/Wedding_OK.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
-          <div class="card-overlay">
-            <div class="card-text">Description du projet ici</div>
-          </div>
-          <div class="close-btn" onclick="closeFullscreen(event)">×</div>
-        </div>
-        </div>
         </div>
       </section>
+      <!-- Réalisations Section -->
+      <section id="réalisations" class="section realisations">
+        <div class="title-container realisations" data-aos="zoom-in"
+          data-aos-easing="ease-in-sine" data-aos-duration="600"
+          data-aos-anchor-placement="bottom-bottom">
+          <h2 class="styled-title realisations realisations-desktop">
+            <span class="outline-text"
+              data-translate="realisations_nos">nos</span>
+            <span class="filled-text"
+              data-translate="realisations_realisations">réalisations</span>
+          </h2>
+          <h2 class="styled-title reaslisations realisations-responsive">
+            <span class="outline-text"></span>
+            <span class="filled-text"
+              data-translate="realisations_realisations">REALISATIONS</span>
+          </h2>
+        </div>
+        <div class="gallery" data-aos="fade-up" data-aos-duration="1300">
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video"
+              poster="./assets/thumbnails/exterieur.jpeg"
+              loop>
+              <source src="./assets/videos/exterior.mp4"
+                type="video/mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_exterior_3d_title">Design
+                  Extérieur <span>3D</span></h3>
+                <p
+                  data-translate="realisations_exterior_3d_description">Création
+                  de tous les bâtiments basés sur des plans de construction,
+                  vidéo d'animation de plusieurs projets en cours.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video" poster="./assets/thumbnails/vape.jpg"
+              loop>
+              <source src="./assets/videos/vape.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_3d_animation_title">Animation
+                  <span>3D</span></h3>
+                <p
+                  data-translate="realisations_3d_animation_description">Création,
+                  animation 3D et montage dynamique d'une vapoteuse, son
+                  support, le décors, les parfums et la simulation de
+                  fluide.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video"
+              poster="./assets/thumbnails/advertisment.jpeg" loop>
+              <source src="./assets/videos/advertisment.mp4"
+                type="video/mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_video_editing_title">Montage
+                  <span>Vidéo</span></h3>
+                <p data-translate="realisations_video_editing_description">Vidéo
+                  de promotion, marketing réseaux sociaux avec des textes,
+                  typographie, motion graphics et transitions.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video"
+              poster="./assets/thumbnails/3d_tracking.jpg" loop>
+              <source
+                src="./assets/videos/tracking_3d.mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_cgi_environment_title">CGI
+                  <span>Environnement</span></h3>
+                <p
+                  data-translate="realisations_cgi_environment_description">Création
+                  et animation d'un environnement en 3D, incrustation de
+                  personnes sur fond vert, motion tracking.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video"
+              poster="./assets/thumbnails/corporate.jpeg"
+              loop>
+              <source src="./assets/videos/corporate.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_corporate_video_title">Montage
+                  <span>Vidéo</span></h3>
+                <p
+                  data-translate="realisations_corporate_video_description">Vidéo
+                  de promotion d'entreprise avec voix d'acteur, transitions,
+                  motion graphics.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video" poster="./assets/thumbnails/interior.jpg"
+              loop>
+              <source src="./assets/videos/interior_3d.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_interior_3d_title">Modélisation
+                  <span>3D</span></h3>
+                <p
+                  data-translate="realisations_interior_3d_description">Modélisation
+                  3D et montage vidéo d'une cuisine, salle de massage, chambre
+                  et d'un restaurant.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video" poster="/assets/thumbnails/music_clip.jpg"
+              loop>
+              <source src="./assets/videos/music_clip.mp4"
+                type="video/mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_music_video_title">Montage
+                  <span>Vidéo</span></h3>
+                <p data-translate="realisations_music_video_description">Montage
+                  vidéo, effets visuels d'un groupe de musique avec des video
+                  shooting de skatboard et plans d'illustration.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video" poster="/assets/thumbnails/party.jpg"
+              loop>
+              <source src="./assets/videos/party.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_party_video_title">Montage
+                  <span>Vidéo</span></h3>
+                <p
+                  data-translate="realisations_party_video_description">Evènement
+                  festif sur les îles Barbaros, foules, dance, concert avec
+                  vidéos de drone et vidéos sur le terrain.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+          <div class="card" onclick="openFullscreen(this)">
+            <video class="card-video" poster="./assets/thumbnails/marriage.jpg"
+              loop>
+              <source src="./assets/videos/marriage.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="card-overlay">
+              <div class="card-text">
+                <h3 class="card-title"
+                  data-translate="realisations_wedding_video_title">Montage
+                  <span>Vidéo</span></h3>
+                <p
+                  data-translate="realisations_wedding_video_description">Animations
+                  de transitions et effets visuels, montage vidéo de shooting
+                  professionnel avec textes et sous-titres, montage audio de la
+                  musique et voix d'actrice.</p>
+              </div>
+            </div>
+            <div class="close-btn" onclick="closeFullscreen(event)">×</div>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ Section -->
+      <section id="faq" class="section faq">
+        <div class="title-container faq" data-aos="zoom-in"
+          data-aos-easing="ease-in-sine" data-aos-duration="600"
+          data-aos-anchor-placement="bottom-bottom">
+          <h2 class="styled-title faq faq-desktop">
+            <span class="outline-text"
+              data-translate="faq_foire">f</span><span class="filled-text"
+              data-translate="faq_aux_questions">aq</span>
+          </h2>
+          <h2 class="styled-title faq faq-responsive">
+            <span class="outline-text"></span>
+            <span class="filled-text" data-translate="faq_faq">FAQ</span>
+          </h2>
+        </div>
+        <div class="faq-list" data-aos="fade-up" data-aos-duration="1300">
+          <div class="faq-item">
+            <button class="faq-question" data-translate="faq_question_1">Je
+              voudrais une vidéo mais je n'ai pas d'idées, pouvez-vous m'aider ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_1">Bien sûr ! Je
+                vous aiderai à trouver une storyline et un scénario logique
+                suivant ce que vous recherchez.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-translate="faq_question_2">Que
+              dois-je fournir ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_2">Vidéos,
+                images, musiques ou n’importe quels éléments nous permettant
+                d’ajouter votre contenu personnel dans la vidéo.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-translate="faq_question_3">Si je
+              n'ai rien à fournir ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_3">Pas de
+                problèmes, je dispose de banques de vidéos, images, musiques et
+                sons libres d'accès, avec ou sans restrictions suivant les
+                droits d’auteurs.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-translate="faq_question_4">Quels
+              sont les restrictions des droits d’auteurs ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_4">Les musiques
+                ne figurant pas dans des banques de libres accès sont protégées
+                dans leur totalité et sont interdites d'utilisation (fichiers
+                audio sources hors concerts, festivals, etc.) sauf si vous
+                achetez une licence d'autorisation de la part du studio de
+                production détenant le label et l'autorisation à la vente. Les
+                musiques figurant dans les banques de libres accès sont
+                autorisées à la diffusion, il y a cependant une restriction
+                secondaire concernant YouTube et les réseaux par rapport à la
+                monétisation.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"
+              data-translate="faq_question_5">Faites-vous des prises photos et
+              vidéos ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_5">Non,
+                uniquement de la post-production, tous les éléments utilisés
+                viendront de vous ou des banques de vidéos et photos.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-translate="faq_question_6">Comment
+              se passent les étapes de la réalisation de mon projet ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_6">Nous
+                remplissons d’abord un cahier des charges afin de rassembler
+                tous vos besoins et je vous tiens informés sur les différentes
+                étapes de votre projet : montage, musique, impressions écrans
+                pour les projets 3D et 2D, captures vidéos d'animations avant
+                rendu pour les projets 3D.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-translate="faq_question_7">Comment
+              se passe le paiement ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_7">Le paiement se
+                fera via la plateforme de freelance sécurisée Malt permettant un
+                paiement échelonné au besoin.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-translate="faq_question_8">Quels
+              sont les délais de livraison ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_8">Généralement
+                dans la semaine, 2 semaines ou plus suivant la complexité et
+                longueur des projets.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-translate="faq_question_9">Comment
+              vous contacter pour exposer mon projet ?
+              <img src="./assets/chevron/down-chevron.png" alt="chevron"
+                class="chevron chevron-down">
+              <img src="./assets/chevron/up-chevron.png" alt="chevron"
+                class="chevron chevron-up">
+            </button>
+            <div class="panel">
+              <p class="faq-answer" data-translate="faq_answer_9">Comme vous le
+                souhaitez, What's App, email, réseaux sociaux...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="section contact">
+        <div class="title-container contact" data-aos="zoom-in"
+          data-aos-easing="ease-in-sine" data-aos-duration="600"
+          data-aos-anchor-placement="bottom-bottom">
+          <h2 class="styled-title contact contact-desktop">
+            <span class="outline-text" data-translate="contact_nous">nous</span>
+            <span class="filled-text"
+              data-translate="contact_contacter">contacter</span>
+          </h2>
+        </div>
+        <div class="contact-form-container" data-aos="fade-up"
+          data-aos-duration="1300">
+          <div class="contact-form" action="index.php" method="POST">
+            <div class="contacts-details">
+              <div class="contacts-details-title"
+                data-translate="contact_title">Contact</div>
+              <div>
+                <div class="contact-details-list-wrapper">
+                  <div class="phone-wrapper">
+                    <div class="phone-title">
+                      <img src="./assets/icons/svg/phone-calling-cyan.svg"
+                        alt="Téléphone"
+                        class="phone-svg contact-svg">
+                      <span data-translate="contact_phone">Téléphone</span>
+                    </div>
+                    <div
+                      class="phone-number details"
+                      data-translate="contact_phone_detail">06
+                      52 35 87 93</div>
+                  </div>
+                  <div class="email-wrapper">
+                    <div class="email-title">
+                      <img src="./assets/icons/svg/email-cyan.svg" alt="Email"
+                        class="email-svg contact-svg">
+                      <span data-translate="contact_email">Email</span>
+                    </div>
+                    <div
+                      class="email-address details">azurlittoralstudio@gmail.com</div>
+                  </div>
+                  <div class="adress-wrapper">
+                    <div class="adress-title">
+                      <img src="./assets/icons/svg/location-cyan.svg"
+                        alt="Localisation"
+                        class="adress-svg contact-svg">
+                      <span
+                        data-translate="contact_location">Localisation</span>
+                    </div>
+                    <div class="adress details"
+                      data-translate="contact_location_detail">Gard (30)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="social-network">
+                <a href="https://www.facebook.com/profile.php?id=61555017925008"
+                  target="_blank">
+                  <img src="./assets/icons/svg/reseaux_sociaux/facebook.svg"
+                    alt="Facebook"
+                    class="facebook social">
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UCVg-D5HKE9_wjF0nLC43T9g"
+                  target="_blank">
+                  <img src="./assets/icons/svg/reseaux_sociaux/youtube.svg"
+                    alt="Youtube"
+                    class="youtube social">
+                </a>
+                <a href="https://www.instagram.com/azurlittoralstudio/"
+                  target="_blank">
+                  <img src="./assets/icons/svg/reseaux_sociaux/instagram.svg"
+                    alt="Instagram"
+                    class="instagram social">
+                </a>
+                <a href="https://x.com/AzurLittoralSTD" target="_blank"
+                  class="x-link">
+                  <img src="./assets/icons/svg/reseaux_sociaux/x.svg" alt="X"
+                    class="x social">
+                </a>
+              </div>
+            </div>
+            <div class="container-general-form">
+              <div class="form-title-container">
+                <h2 data-translate="contact_form_title">Chaque <span
+                    class="creation">création</span> naît d'une <span
+                    class="rencontre">rencontre</span></h2>
+                <p data-translate="contact_form_description">Nous nous engageons
+                  à révéler la beauté de vos concepts à travers des expériences
+                  numériques audiovisuelles et interactives uniques, en
+                  combinant vos aspirations, vos contraintes et nos moyens de
+                  production.</p>
+              </div>
+              <div id="form-content">
+                <form class="client-data" id="contact-form"
+                  action="https://formsubmit.co/247244954315219ef1138b8f43e6e19e"
+                  method="POST">
+                  <input type="hidden" name="_honey" style="display:none">
+                  <input type="hidden" name="_subject"
+                    value="Nouvelle soumission de formulaire!">
+                  <input type="hidden" name="_template" value="table">
+                  <input type="hidden" name="_next"
+                    value="http://www.azurlittoralstudio.com/#contact">
+                  <input type="hidden" name="_captcha" value="false">
+                  <div class="form-group">
+                    <label for="name" class="label"
+                      data-translate="contact_form_name">Nom</label>
+                    <input type="text" id="name" name="name" placeholder="Nom"
+                      data-translate-placeholder="contact_form_name_placeholder"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="label"
+                      data-translate="contact_form_email">Email</label>
+                    <input type="email" id="email" name="email"
+                      placeholder="Email" required>
+                  </div>
+                  <div class="form-group-message">
+                    <label for="message" class="label"
+                      data-translate="contact_form_message">Message</label>
+                    <textarea id="message" name="message"
+                      placeholder="Comment pouvons-nous vous aider pour que votre projet prenne vie ?"
+                      data-translate-placeholder="contact_form_message_placeholder"
+                      required></textarea>
+                  </div>
+                  <button class="submit" type="submit"
+                    data-translate="contact_form_send">Envoyer</button>
+                </form>
+                <div class="loader-container" id="loader-container">
+                  <div class="loader" id="loader"></div>
+                  <p class="loader-text"
+                    data-translate="contact_form_loader">Merci de patienter
+                    quelques secondes... 😁</p>
+                </div>
+                <!-- Indicateur de chargement -->
+                <div class="success-message" id="success-message">
+                  <img src="./assets/form/valide.png" alt="Success">
+                  <p data-translate="contact_form_success">Votre message a bien
+                    été envoyé.</p>
+                </div>
+                <div class="error-message" id="error-message">
+                  <img src="./assets/form/erreur.png" alt="Erreur">
+                  <p data-translate="contact_form_error">Veuillez nous excuser
+                    une erreur s'est produite pendant l'envoi du message. Je
+                    vous invite à nous contacter par mail ou téléphone ou sur
+                    les réseaux sociaux pour que nous puissions discuter de
+                    votre projet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div>
+          <p class="footer-text" data-translate="footer_text">© 2024 Azur
+            Littoral Studio. Tous droits réservés.</p>
+        </div>
+      </footer>
     </main>
-        <script src="./index.js"></script>
+    <!-- Scripts -->
+    <script src="./index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
   </body>
 </html>
