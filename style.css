@@ -45,9 +45,7 @@ article ul {
 }
 
 a {
-  /* Places underlines below the descenders */
   text-underline-position: under;
-  /* Sets the thickness as a percentage of the font size */
   text-decoration-thickness: 8;
 }
 
@@ -76,7 +74,7 @@ summary,
   cursor: pointer;
 }
 
-/* HTML5 display-role reset for older browsers */
+
 
 :root {
   --body-font: 'Roboto', sans-serif;
@@ -1266,7 +1264,7 @@ textarea:-webkit-autofill:hover {
   text-indent: -9999em;
   animation: mulShdSpin 1.1s infinite ease;
   transform: translateZ(0);
-  margin: 5rem auto;
+  margin: 10rem auto 0 auto;
 }
 
 .loader-container {
@@ -1274,15 +1272,9 @@ textarea:-webkit-autofill:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 17rem;
 }
 
-.loader-container p {
-  font-size: 2rem;
-  font-family: var(--body-font);
-  color: white;
-  margin: 10rem;
-  text-align: center;
-}
 
 @keyframes mulShdSpin {
 

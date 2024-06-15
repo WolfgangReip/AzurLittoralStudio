@@ -6,6 +6,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- email -->
+    <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "qRSoE0mLVa4kCx3J0",
+            });
+        })();
+    </script>
+
     <!-- Balises Open Graph -->
     <meta property="og:title" content="Azur Littoral Studio">
     <meta property="og:description"
@@ -36,7 +47,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Icon -->
-    <link rel="icon" type="image/png" href="./assets/Logo_32x32.PNG" />
+    <link rel="icon" type="image/png" href="./assets/logo/logo_32x32.png" />
 
     <!-- SEO -->
     <meta name="description"
@@ -754,16 +765,17 @@
                     value="http://www.azurlittoralstudio.com/#contact">
                   <input type="hidden" name="_captcha" value="false">
                   <div class="form-group">
-                    <label for="name" class="label"
+                    <label for="from_name" class="label"
                       data-translate="contact_form_name">Nom</label>
-                    <input type="text" id="name" name="name" placeholder="Nom"
+                    <input type="text" id="name" name="from_name"
+                      placeholder="Nom"
                       data-translate-placeholder="contact_form_name_placeholder"
                       required>
                   </div>
                   <div class="form-group">
-                    <label for="email" class="label"
+                    <label for="from_email" class="label"
                       data-translate="contact_form_email">Email</label>
-                    <input type="email" id="email" name="email"
+                    <input type="email" id="email" name="from_email"
                       placeholder="Email" required>
                   </div>
                   <div class="form-group-message">
@@ -779,9 +791,6 @@
                 </form>
                 <div class="loader-container" id="loader-container">
                   <div class="loader" id="loader"></div>
-                  <p class="loader-text"
-                    data-translate="contact_form_loader">Merci de patienter
-                    quelques secondes... 😁</p>
                 </div>
                 <!-- Indicateur de chargement -->
                 <div class="success-message" id="success-message">

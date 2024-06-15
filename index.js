@@ -110,37 +110,28 @@ for (var i = 0; i < acc.length; i++) {
 
 document
     .getElementById('contact-form')
-    .addEventListener('submit', async (event) => {
+    .addEventListener('submit', function (event) {
         event.preventDefault();
         const form = event.target;
         const loaderContainer = document.getElementById('loader-container');
         const errorMessage = document.getElementById('error-message');
         const successMessage = document.getElementById('success-message');
-        const formData = new FormData(form);
 
         form.style.display = 'none';
         loaderContainer.classList.add('active');
 
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/json',
-                },
-                body: formData,
-            });
-
-            loaderContainer.classList.remove('active');
-
-            if (response.ok) {
+        emailjs.sendForm('service_l8qzb9o', 'template_isnztj5', form).then(
+            function (response) {
+                console.log('Email sent!', response.status, response.text);
+                loaderContainer.classList.remove('active');
                 successMessage.style.display = 'flex';
-            } else {
+            },
+            function (error) {
+                console.error('Error sending email:', error);
+                loaderContainer.classList.remove('active');
                 errorMessage.style.display = 'flex';
             }
-        } catch (error) {
-            errorMessage.style.display = 'flex';
-            loaderContainer.classList.remove('active');
-        }
+        );
     });
 
 document.getElementById('toggle').addEventListener('click', function () {
